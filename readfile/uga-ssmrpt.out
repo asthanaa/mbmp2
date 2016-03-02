@@ -1,0 +1,309 @@
+ SSMRPT program started at:
+20160227
+ &MOL
+ MOLECULE        = HF                                                                                                                
+                                                                                                                                     
+          ,
+ ISTATE  =                     1,
+ ISYMMETRY       =                     1
+ /
+ &OCCINFO
+ NBFN    =                    19,
+ NFZC    =                     0,
+ NO      =                     4,
+ NACT    =                     2,
+ NU      =                    13,
+ NFZV    =                     0
+ /
+ &CSFINFO
+ NVAC    =                     3,
+ COEFF_READ      = F
+ /
+ &METHOD
+ MRMP    = F
+ /
+ &PTINFO
+ FTYPE   =                   110,
+ PTTYP   =                     1,
+ FOCK_OP = bd  ,
+ TW_COUPLING     = F,
+ DYALL   = F,
+ PROJ    = F,
+ GNO     = F
+ /
+ &CONVINFO
+ NITMAX  =                    50,
+ TLRNC   =  1.000000000000000E-003,
+ TIKHONOV        = F,
+ RES_CONV        =                     7,
+ D_SHFT  =  0.000000000000000E+000,
+ K_SHFT  =   1.00000000000000     
+ /
+ &DIISINFO
+ DIIS_LOGI       = F,
+ NDIIS   =                     3,
+ NSKIP   =                     4
+ /
+ HF
+ istate =                      1
+ isymmetry =                      1
+ nbfn =                     19
+ nfzc =                      0
+ no =                      4
+ nact =                      2
+ nu =                     13
+ nfzv =                      0
+ nvac =                      3
+ ftype=                   110
+ pttyp=                     1
+ threshold for writing t in output  0.100000000000000     
+ Rec Length of diisfile (MWords):                     0
+ Expected Memory (MWords):                     0
+ lABSIZ                     1                     1                    19
+                 15000
+ VSORT2                     4                    13                     6
+                    15                    19                 15000
+                  7500
+ ecore  -97.0256273789909     
+ CPU time used in integral reading   0.00 sec
+ after sorting, begin reading symmetry information
+ The lowest states energies:
+  -100.018522852401       -96.9566521947691       -98.2935816552819     
+ imaginary part
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+ THE CAS ENERGY IS :  -100.018522852401      A.U.
+ Coefficient:
+ -----------------------------------------------
+                 1      -0.996964135544
+                 2      -0.002938618517
+                 3       0.077806663983
+ -----------------------------------------------
+ nonzero csf                     3
+ EREF0 Energy is:  -59.9656215643402     
+ --------------------------------------------
+ Density matrix over active orbitals: D_xy
+ --------------------------------------------
+    u    v    D_xy
+    1    1   1.9878836106
+    1    2   0.0038198660
+    2    1   0.0038198660
+    2    2   0.0121163894
+ Orbital Energies with generalised fock operator
+ --------------------------------------------
+ DOUBLY OCCUPIED CORE ORBITALS:
+  -26.2752723768070       -1.41602637945725      -0.644333262869019     
+ -0.644333262869020     
+ ACTIVE ORBITALS:
+  -1.01569224231590        1.10486392440408     
+ VIRTUAL ORBITALS:
+  0.392160072855895        1.34536913521671        1.43531250889370     
+   1.43531250889370        1.61388998532876        1.61388998532876     
+   2.10466687964264        2.70030348508517        3.98860149694782     
+   3.98860149694783        4.41352193885090        4.41352193885090     
+   5.15013000517344     
+ --------------------------------------------
+ ZEROTH ENERGY OF CONFIGURATION
+ --------------------------------------------
+  -59.9913150486363       -57.8707588819163       -55.7502027151963     
+ --------------------------------------------
+ fock:bd  proj= F dyall= F gno= F
+  CASE 1 : i -> a
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.28196755E-03        16
+iterating cycle    1  for reference    2  residue 0.69397698E-04        16
+iterating cycle    1  for reference    3  residue 0.10107322E-02        16
+iterating cycle    2  for reference    1  residue 0.34220830E-04        16
+iterating cycle    2  for reference    2  residue 0.93941851E-05        16
+iterating cycle    2  for reference    3  residue 0.66358436E-05        16
+iterating cycle    3  for reference    1  residue 0.19809910E-06        16
+iterating cycle    3  for reference    2  residue 0.10851059E-06        16
+iterating cycle    3  for reference    3  residue 0.56296540E-07        16
+iterating cycle    4  for reference    1  residue 0.22551673E-08        14
+iterating cycle    4  for reference    2  residue 0.11599633E-08        15
+iterations converged in  3 cycles for          CASE 1 : i -> a CPU time:                 0.00 sec
+    CPU time used for  CASE 1 : i -> a  0.00 sec
+ --------------------------------------------------------------------
+  CASE 2 : i -> u
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.72419832E-03         2
+iterating cycle    1  for reference    2  residue 0.26484607E-03         4
+iterating cycle    1  for reference    3  residue 0.14926952E-01         2
+iterating cycle    2  for reference    1  residue 0.26958401E-07         2
+iterating cycle    2  for reference    2  residue 0.10791622E-03         4
+iterating cycle    2  for reference    3  residue 0.57705927E-04         2
+iterating cycle    3  for reference    2  residue 0.35839534E-05         4
+iterating cycle    3  for reference    3  residue 0.52597807E-07         2
+iterating cycle    4  for reference    2  residue 0.79229401E-07         4
+iterations converged in  3 cycles for          CASE 2 : i -> u CPU time:                 0.00 sec
+    CPU time used for  CASE 2 : i -> u  0.00 sec
+ --------------------------------------------------------------------
+  CASE 4 : ij -> ab
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.14422941E-01       686
+iterating cycle    1  for reference    2  residue 0.42354176E-04       686
+iterating cycle    1  for reference    3  residue 0.15554450E-02       686
+iterating cycle    2  for reference    1  residue 0.32499322E-04       686
+iterating cycle    2  for reference    2  residue 0.94472229E-05       686
+iterating cycle    2  for reference    3  residue 0.83715653E-05       686
+iterating cycle    3  for reference    1  residue 0.18530439E-06       686
+iterating cycle    3  for reference    2  residue 0.11238745E-06       684
+iterating cycle    3  for reference    3  residue 0.74227219E-07       682
+iterating cycle    4  for reference    1  residue 0.25257397E-08       470
+iterating cycle    4  for reference    2  residue 0.21114959E-08       460
+iterations converged in  3 cycles for        CASE 4 : ij -> ab CPU time:                 0.02 sec
+    CPU time used for  CASE 4 : ij -> ab  0.02 sec
+ --------------------------------------------------------------------
+  CASE 5 : iu -> ab
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.12677652E-01     174
+iterating cycle    1  for reference    2  residue 0.35745465E-04     348
+iterating cycle    1  for reference    3  residue 0.90755319E-03     174
+iterating cycle    2  for reference    1  residue 0.15730338E-05     174
+iterating cycle    2  for reference    2  residue 0.33893747E-05     346
+iterating cycle    2  for reference    3  residue 0.48324649E-05     174
+iterating cycle    3  for reference    1  residue 0.47330701E-09     108
+iterating cycle    3  for reference    2  residue 0.62000117E-07     343
+iterating cycle    3  for reference    3  residue 0.43070478E-07     172
+iterations converged in  2 cycles for        CASE 5 : iu -> ab CPU time:                 0.01 sec
+    CPU time used for  CASE 5 : iu -> ab  0.01 sec
+ --------------------------------------------------------------------
+  CASE 6 : ij -> au
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.13668329E-01        58
+iterating cycle    1  for reference    2  residue 0.43923011E-04       116
+iterating cycle    1  for reference    3  residue 0.12630989E-02        58
+iterating cycle    2  for reference    1  residue 0.92258650E-06        58
+iterating cycle    2  for reference    2  residue 0.43530753E-05       116
+iterating cycle    2  for reference    3  residue 0.47926189E-05        58
+iterating cycle    3  for reference    1  residue 0.34221538E-09        23
+iterating cycle    3  for reference    2  residue 0.85015309E-07       115
+iterating cycle    3  for reference    3  residue 0.28545166E-07        58
+iterations converged in  2 cycles for        CASE 6 : ij -> au CPU time:                 0.00 sec
+    CPU time used for  CASE 6 : ij -> au  0.00 sec
+ --------------------------------------------------------------------
+  CASE 8 : ij -> uv
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.33569203E-01         6
+iterating cycle    1  for reference    2  residue 0.95714859E-04        12
+iterating cycle    1  for reference    3  residue 0.34905682E-02         6
+iterating cycle    2  for reference    1  residue 0.65170948E-06         4
+iterating cycle    2  for reference    2  residue 0.22690620E-06         8
+iterating cycle    2  for reference    3  residue 0.14951304E-04         4
+iterating cycle    3  for reference    2  residue 0.24164855E-09         8
+iterating cycle    3  for reference    3  residue 0.22106558E-07         4
+iterations converged in  2 cycles for        CASE 8 : ij -> uv CPU time:                 0.00 sec
+    CPU time used for  CASE 8 : ij -> uv  0.00 sec
+ --------------------------------------------------------------------
+  CASE 9 : iu -> va
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.16239135E-01        16
+iterating cycle    1  for reference    2  residue 0.57342846E-04        64
+iterating cycle    1  for reference    3  residue 0.16515913E-02        16
+iterating cycle    2  for reference    1  residue 0.13775268E-05        16
+iterating cycle    2  for reference    2  residue 0.51291882E-05        64
+iterating cycle    2  for reference    3  residue 0.92763506E-05        16
+iterating cycle    3  for reference    1  residue 0.40878508E-09         9
+iterating cycle    3  for reference    2  residue 0.20367152E-06        63
+iterating cycle    3  for reference    3  residue 0.81077309E-07        16
+iterating cycle    4  for reference    2  residue 0.73439133E-08        58
+iterations converged in  3 cycles for        CASE 9 : iu -> va CPU time:                 0.00 sec
+    CPU time used for  CASE 9 : iu -> va  0.00 sec
+ --------------------------------------------------------------------
+  CASE 10 : iu -> av
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.36056818E-01        16
+iterating cycle    1  for reference    2  residue 0.10596268E-03        32
+iterating cycle    1  for reference    3  residue 0.28158176E-02        16
+iterating cycle    2  for reference    1  residue 0.38789123E-05        16
+iterating cycle    2  for reference    2  residue 0.18665308E-04        32
+iterating cycle    2  for reference    3  residue 0.17218096E-04        16
+iterating cycle    3  for reference    1  residue 0.79841189E-09        13
+iterating cycle    3  for reference    2  residue 0.31804172E-06        31
+iterating cycle    3  for reference    3  residue 0.16171490E-06        16
+iterating cycle    4  for reference    2  residue 0.75927542E-08        15
+iterating cycle    4  for reference    3  residue 0.14812811E-08        16
+iterations converged in  3 cycles for       CASE 10 : iu -> av CPU time:                 0.00 sec
+    CPU time used for  CASE 10 : iu -> av  0.00 sec
+ --------------------------------------------------------------------
+  CASE 12: iv -> zu
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.14913634E-01         2
+iterating cycle    1  for reference    2  residue 0.30786860E-04         4
+iterating cycle    1  for reference    3  residue 0.46639183E-03         2
+iterating cycle    2  for reference    1  residue 0.32624425E-06         2
+iterating cycle    2  for reference    2  residue 0.72122800E-07         4
+iterating cycle    2  for reference    3  residue 0.13483347E-05         2
+iterating cycle    3  for reference    3  residue 0.18606641E-08         2
+iterations converged in  2 cycles for        CASE 12: iv -> zu CPU time:                 0.00 sec
+    CPU time used for  CASE 12: iv -> zu  0.00 sec
+ --------------------------------------------------------------------
+  CASE 3 : u -> a
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.45750733E-02         5
+iterating cycle    1  for reference    2  residue 0.65501437E-03        10
+iterating cycle    1  for reference    3  residue 0.23799235E-01         5
+iterating cycle    2  for reference    1  residue 0.64356136E-06         5
+iterating cycle    2  for reference    2  residue 0.16932812E-03        10
+iterating cycle    2  for reference    3  residue 0.13639005E-03         5
+iterating cycle    3  for reference    1  residue 0.69157888E-09         3
+iterating cycle    3  for reference    2  residue 0.56782217E-05        10
+iterating cycle    3  for reference    3  residue 0.15365793E-05         5
+iterating cycle    4  for reference    2  residue 0.11452158E-06        10
+iterating cycle    4  for reference    3  residue 0.21431698E-07         5
+iterating cycle    5  for reference    2  residue 0.25760646E-08         9
+iterations converged in  4 cycles for          CASE 3 : u -> a CPU time:                 0.00 sec
+    CPU time used for  CASE 3 : u -> a  0.00 sec
+ --------------------------------------------------------------------
+  CASE 11 : uv -> aw
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.23910193E-01       5
+iterating cycle    1  for reference    2  residue 0.11075637E-03      10
+iterating cycle    1  for reference    3  residue 0.39990202E-02       5
+iterating cycle    2  for reference    1  residue 0.24784933E-05       5
+iterating cycle    2  for reference    2  residue 0.76116846E-06      10
+iterating cycle    2  for reference    3  residue 0.40465013E-04       5
+iterating cycle    3  for reference    1  residue 0.36990171E-09       5
+iterating cycle    3  for reference    2  residue 0.54197419E-08      10
+iterating cycle    3  for reference    3  residue 0.55464623E-06       5
+iterating cycle    4  for reference    3  residue 0.89022837E-08       5
+iterations converged in  3 cycles for       CASE 11 : uv -> aw CPU time:                 0.00 sec
+    CPU time used for  CASE 11 : uv -> aw  0.00 sec
+ --------------------------------------------------------------------
+  CASE 7 : uv -> ab
+ --------------------------------------------------------------------
+iterating cycle    1  for reference    1  residue 0.29075283E-01      45
+iterating cycle    1  for reference    2  residue 0.66450684E-04      90
+iterating cycle    1  for reference    3  residue 0.22824270E-02      45
+iterating cycle    2  for reference    1  residue 0.54605698E-05      43
+iterating cycle    2  for reference    2  residue 0.44540702E-06      86
+iterating cycle    2  for reference    3  residue 0.18992168E-04      43
+iterating cycle    3  for reference    1  residue 0.11531102E-08      41
+iterating cycle    3  for reference    2  residue 0.51195334E-08      82
+iterating cycle    3  for reference    3  residue 0.23712228E-06      43
+iterating cycle    4  for reference    3  residue 0.34697738E-08      43
+iterations converged in  3 cycles for        CASE 7 : uv -> ab CPU time:                 0.00 sec
+    CPU time used for  CASE 7 : uv -> ab  0.00 sec
+ --------------------------------------------------------------------
+ Expectation value:  -100.196650347938     
+ 
+ Hamiltonian
+  -100.185866254948       1.153151341579905E-002  0.175290709882790     
+  9.566060582664468E-003  -98.8847343253548       0.123106652520021     
+  0.177397520421954       0.130693677244050       -97.4505814724806     
+ H-H(t)
+  0.000000000000000E+000  1.965452833134585E-003 -2.106810539164367E-003
+ -1.965452833134585E-003  0.000000000000000E+000 -7.587024724029640E-003
+  2.106810539164367E-003  7.587024724029640E-003  0.000000000000000E+000
+ The non-hermicity index of effective Hamiltonian is  3.825778051593568E-003
+ eigenchoice_                     1
+ Overlap between C0 and C1 is:  0.999900900615737     
+ THE SSMRPT ENERGY IS :  -100.197191839527      A.U.
+ Coefficient:
+ -----------------------------------------------
+                 1      -0.997923725313
+                 2       0.001233369254
+                 3       0.064395009572
+ -----------------------------------------------
+*** THE DESIRED FINAL ENERGY OF STATE  1     IS :   -100.197191839527   A.U.
+ CPU time used in SSMRPT driver   0.08 sec
+ Total CPU time used:   0.09 sec

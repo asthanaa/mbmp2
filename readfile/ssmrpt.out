@@ -1,0 +1,175 @@
+ HF
+ istate =                      1
+ nbas =                     19
+ nfzc =                      0
+ ncls =                      4
+ nact =                      2
+ nvir =                     13
+ nfzv =                      0
+ ncsf =                      3
+ pttyp = RS
+ Start interfacing MO integrals
+ lABSIZ                     1                     1                    19
+                 15000
+ VSORT2                     4                    13                     6
+                    15                    19                 15000
+                  7500
+ ecore                     1                     1  -27.7626624367678     
+  -40.5423312460417     
+ ecore                     2                     3  -2.49265215071537     
+  -9.07455879784306     
+ ecore                     3                     6  -1.63256210430621     
+  -8.20683822047390     
+ ecore                     4                    10  -1.63256210430621     
+  -8.20683822047390     
+ Core Energy :  -98.4260052809282     
+  !! CPU  time for interface:     0.00 sec
+  !! WALL time for interface:     0.00 sec
+ Reighley-Shcrodinger (RS)  Perturbation Theory
+  Enter amp => driver 
+  New code
+     fcore
+                     1  -27.7626624367678     
+                     2  -2.49265215071537     
+                     3  -1.63256210430621     
+                     4  -1.63256210430621     
+                     5 -0.944587398656845     
+                     6 -0.626667846985618     
+ 
+ Hamiltonian
+  -99.3693783747718      -1.125201685000383E-002  2.235851733531127E-004
+ -1.125201685000383E-002  -99.8706936525772       1.291860652490973E-002
+  2.235851733531127E-004  1.291860652490973E-002  -99.0542345234563     
+ H-H(t)
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+ 
+  -99.3691259643646       -99.8711504259588       -99.0540301604819     
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+                     1  -99.8711504259588     
+                     2  -99.3691259643646     
+                     3  -99.0540301604819     
+  ###  CAS SOLUTION  ###
+ 
+           Eigenvalue (Energy) :  -99.8711504259588     
+           Coefficient:
+           -----------------------------------------------
+                 1       0.02242316        2-
+                 2       0.99962349        ++
+                 3      -0.01581406        -2
+           -----------------------------------------------
+          (*) Only the absolute value of coefficients
+             which is larger than0.050 is printed out. 
+ The cutoff value for coefficients is:  1.000000000000000E-002
+ Division_ =                     1
+   # use regularizatioin
+ Eigenchoice_ =                     1
+  # Use max-overlap criterion for choosing root
+ The threshold for amplitude iteration is:  1.000000000000000E-012
+ Time for preparing data for ssmrpt2:     0.00 sec
+  CASE 1 : i -> a
+    CPU time used for  CASE 1 : i -> a  0.00 sec
+  CASE 2 : i -> u
+    CPU time used for  CASE 2 : i -> u  0.00 sec
+  CASE 3 : u -> a
+    CPU time used for  CASE 3 : u -> a  0.00 sec
+  CASE 4 : i -> a, j -> b
+    CPU time used for  CASE 4 : i -> a, j -> b  0.00 sec
+  CASE 5 : i -> a, j -> u
+    CPU time used for  CASE 5 : i -> a, j -> u  0.00 sec
+  CASE 6 : i -> u, j -> v
+    CPU time used for  CASE 6 : i -> u, j -> v  0.00 sec
+  CASE 7 : i -> a, u -> b
+    CPU time used for  CASE 7 : i -> a, u -> b  0.00 sec
+  CASE 8 : i -> a, u -> v
+    CPU time used for  CASE 8 : i -> a, u -> v  0.00 sec
+  CASE 9 : i -> v, u -> b
+    CPU time used for  CASE 9 : i -> v, u -> b  0.00 sec
+  CASE 10 : i -> w, u -> v
+    CPU time used for  CASE 10 : i -> w, u -> v  0.00 sec
+  CASE 11 : u -> a, v -> b
+    CPU time used for  CASE 11 : u -> a, v -> b  0.00 sec
+  CASE 12 : u -> a, v -> w
+    CPU time used for  CASE 12 : u -> a, v -> w  0.00 sec
+ Sum of (tc)^2   4.399703529560207E-002
+  CASE 1 : i -> a
+    CPU time used for  CASE 1 : i -> a  0.00 sec
+  CASE 2 : i -> u
+    CPU time used for  CASE 2 : i -> u  0.00 sec
+  CASE 3 : u -> a
+    CPU time used for  CASE 3 : u -> a  0.00 sec
+  CASE 4 : i -> a, j -> b
+    CPU time used for  CASE 4 : i -> a, j -> b  0.02 sec
+  CASE 5 : i -> a, j -> u
+    CPU time used for  CASE 5 : i -> a, j -> u  0.00 sec
+  CASE 6 : i -> u, j -> v
+    CPU time used for  CASE 6 : i -> u, j -> v  0.00 sec
+  CASE 7 : i -> a, u -> b
+    CPU time used for  CASE 7 : i -> a, u -> b  0.00 sec
+  CASE 8 : i -> a, u -> v
+    CPU time used for  CASE 8 : i -> a, u -> v  0.00 sec
+  CASE 9 : i -> v, u -> b
+    CPU time used for  CASE 9 : i -> v, u -> b  0.00 sec
+  CASE 10 : i -> w, u -> v
+    CPU time used for  CASE 10 : i -> w, u -> v  0.00 sec
+  CASE 11 : u -> a, v -> b
+    CPU time used for  CASE 11 : u -> a, v -> b  0.00 sec
+  CASE 12 : u -> a, v -> w
+    CPU time used for  CASE 12 : u -> a, v -> w  0.00 sec
+ Sum of t^2   0.152617079575090     
+ 0 body & 1body     0.00 sec
+ 2 body     0.00 sec
+ 3 body - (1)     0.00 sec
+ 3 body     0.00 sec
+ Expectation energy:                 -100.021482687030     
+ Expectation value (with division):  -100.021479842161     
+ 
+ Hamiltonian
+  -99.7100196671934      -7.160282634910440E-003  1.249897295357518E-004
+ -7.318221670346258E-003  -100.021173075285       1.092728774922938E-002
+  1.612894541510988E-004  8.957173653324317E-003  -99.3183923895765     
+ H-H(t)
+  0.000000000000000E+000  1.579390354358185E-004 -3.629972461534703E-005
+ -1.579390354358185E-004  0.000000000000000E+000  1.970114095905064E-003
+  3.629972461534703E-005 -1.970114095905064E-003  0.000000000000000E+000
+ The non-hermicity index of effective Hamiltonian is  9.318573996540904E-004
+ 
+  -99.7098513667241       -100.021480622459       -99.3182531428721     
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+ print the ci vector after diagonalisation
+ -0.999723922024848       2.349604065366904E-002 -1.257173637297154E-004
+  2.298651474111929E-002  0.999654588585606      -1.274063027480765E-002
+  3.491885499708911E-005  1.554332382185745E-002  0.999879194635653     
+ 
+ print the ci vector after sorting
+ -0.999723922024848       2.349604065366904E-002 -1.257173637297154E-004
+  2.298651474111929E-002  0.999654588585606      -1.274063027480765E-002
+  3.491885499708911E-005  1.554332382185745E-002  0.999879194635653     
+ 
+ The lowest states energies:
+ State                     1  energy =  -100.021480622459       img_part =
+  0.000000000000000E+000 , Overlap =  0.999995117852353      (*)
+ State                     2  energy =  -99.7098513667241       img_part =
+  0.000000000000000E+000 , Overlap =  1.072210498406442E-003
+ State                     3  energy =  -99.3182531428721       img_part =
+  0.000000000000000E+000 , Overlap =  2.738936701499172E-004
+ Relaxed value:                      -100.021480622459     
+ Overlap between C0 and C1 is:  0.999995117852353     
+ 
+           Eigenvalue (Energy) :  -100.021480622459     
+           Coefficient:
+           -----------------------------------------------
+                 1       0.02298651        2-
+                 2       0.99965459        ++
+                 3      -0.01274063        -2
+           -----------------------------------------------
+          (*) Only the absolute value of coefficients
+             which is larger than0.050 is printed out. 
+ Time for running ssmrpt2:     0.04 sec
+  Exit  mkpt_ => driver 
+  SSMRPT(MP) Energy -- unrelaxed:  -100.021482687030     
+  SSMRPT(MP) Energy:               -100.021480622459     
+  !! SYSTEM WALL time used :     0.04 sec
+  ### Total used CPU time :     0.04 sec
+  ### Total used WALL time:     0.04 sec
