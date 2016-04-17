@@ -1,0 +1,14 @@
+ HF 		#   name
+ 1 		#   istate
+ 3 		#   ncsf
+ 19 		#   nbas
+ 0 4 2 13 0 		#   nfrz, ncls, nact, nvir, nfrv
+ 1 		#   iteration_method
+ 50 		#   Max_number_of_iteration
+ 1.d-12 		#   Amplitudes_threshold
+ 1 		#   iteration_method, division_ansatz
+ 1.d-2 		#   Omega
+ 1 		#   Eigenvalue choice criteria
+ MP 		#   Partitioning type: MP or EN (obselete)
+ RS 		#   Purterbation type: RS or BW
+ 1 		#   Internal contraction for inactive orbital.(0/1)

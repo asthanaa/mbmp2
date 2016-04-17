@@ -1,0 +1,8 @@
+&mol molecule=HF , istate=1 , isymmetry=1 /
+&occinfo nbfn=19, nfzc=0, no=4, nact=2, nu=13, nfzv=0  / 
+&csfinfo nvac=3, coeff_read=.F.  /  
+&method mrmp=.F. / 
+&ptinfo ftype=110, pttyp=1, fock_op=bd, proj=.F., gno=.F., TW_coupling=.F.  /
+&convinfo nitmax=50, tlrnc=0.001, res_conv=7, d_shft=0.0, k_shft=1.0   /
+&diisinfo diis_logi=.F. ndiis=3, nskip=4 /
+&debuginfo thrs=0.1, debug_=10, restrt=0 /
