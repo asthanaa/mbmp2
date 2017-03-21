@@ -114,7 +114,7 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 		#print "spin list l check : it should have all contracted ", spin_list_lower 
 		
 
-		print "before spin change ", full_formed, full_pos, tmp_1.spin
+		#print "before spin change ", full_formed, full_pos, tmp_1.spin
 		#change the spin of the contracted
 		'''
 		obj_for_spin = tmp_2.pair
@@ -165,9 +165,9 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	    if const_of_cumulant:
 		const_of_expression = const_of_expression * const_of_cumulant
 	    #const_of_expression=const_of_expression*const_from_cumulant
-            # the summition thingy
+	# the summition thingy
 	    loopcount=0.0
-	    print "loopcount ",spin_list_upper, spin_list_lower
+	    #print "loopcount ",spin_list_upper, spin_list_lower
 	    loopcount = func.loop_present(spin_list_upper, spin_list_lower, -1, 0)
 	    #if not output and const_of_expression!=1.0 and not cumulant_present :
 	    if loopcount>0.00001:
@@ -250,6 +250,7 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	elif output :
 	    func.write_normal_order(new_list, output)#as the name suggest - writes the normal order in output file list
 	    #parity function at work ! Woaaa
+        #print "just before parity", full_formed, full_pos
  	if (parity.parity(full_formed, full_pos)):
 	    sign=sign*(-1)
 	#write in list to be returned by th whole function :

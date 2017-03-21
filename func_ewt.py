@@ -133,7 +133,7 @@ def cummulant(contracted, full_formed, new_list, cumulant_present):
 
 def list_of_excp(degree, i, j):
     excep=[]
-    print "here i amd j are : ", i, j
+    #print "here i amd j are : ", i, j
     if degree == 2:
 	a_cum = matrix_con()
 	b_cum = matrix_con()
@@ -594,6 +594,39 @@ def loop_present(spin_list_upper, spin_list_lower, loop_start, counter):
 	#print 'loop_present while loop executed'
 	loopcount+=loop_present1(spin_list_upper, spin_list_lower, loop_start, counter)
     return loopcount
+
+def make_operators_single(string1, string2, str_no, p):
+    overall=deque([])
+    
+
+    for item in string1:
+        if item>='i' and item<='n':
+	    x=operator('ho', '1', p+1, item, str_no, -1, 0)
+	    overall.append(x)
+	    p+=1
+        elif item>='u' and item<='z':
+            x=operator('ac', '1', p+1, item, str_no, -1, 0)
+            overall.append(x)
+	    p+=1
+        elif item >='a' and item<='h':
+	    x=operator('pa', '1', p+1, item, str_no, -1, 0)
+	    overall.append(x)
+	    p+=1
+    
+    for item in string2:
+        if item>='i' and item<='n':
+	    x=operator('ho', '0', p+1, item, str_no, -1, 0)
+	    overall.append(x)
+	    p+=1
+        elif item>='u' and item<='z' or item=='o' or item == 't':
+            x=operator('ac','0', p+1, item, str_no, -1, 0)
+            overall.append(x)
+	    p+=1
+        elif item >='a' and item<='h':
+	    x=operator('pa', '0', p+1, item, str_no, -1, 0)
+	    overall.append(x)
+	    p+=1
+    return overall
 def make_operators(holes, active, particles):
     overall_i=deque([])
     overall_a=deque([])
