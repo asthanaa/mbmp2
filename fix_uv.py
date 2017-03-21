@@ -80,12 +80,10 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	    output.append(contracted_l[index])
 	    output.append(contracted_r[index])
 	    #cross contraction have a 1/2 factor due to Ms summing 
-	    if (contracted_l[index].spin == contracted_r[index].spin):
-		print "\n not multiplied\n"
-	    else :
+	    if (contracted_l[index].spin != contracted_r[index].spin and contracted_l[index].kind=='ac'):
 		const_of_expression=const_of_expression*(1.0/2.0)
 	    #!!!!!make the spin change of the operators here. Think 
-	    print const_of_expression, contracted_l[index].spin, contracted_r[index].spin
+	    #print const_of_expression, contracted_l[index].spin, contracted_r[index].spin
 	flag=0
 	#append all the operators that are not contracted
 	func.normal_order_adv(full, output)
@@ -96,85 +94,99 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	    output_dag.append(item.dag)
 	#full_formed.extend(output_pos)
 	#append the contraction in the list to be printed in the tec.txt
-	for item in output:
-	    print "spinn output", item.spin
 	try:
 	    for index in range(lim_cnt):
 	        #When you pop an element from output, make sure is position is stored in full_formed
 		tmp_1 = output.popleft()
-		full_formed.append(tmp_1.pos)
+		full_formed.append(copy.copy(tmp_1.pos))
 		tmp_2 = output.popleft()
-		full_formed.append(tmp_2.pos)
+		full_formed.append(copy.copy(tmp_2.pos))
 		#store spin in the list for checking the loop factor
-
 		if tmp_1.dag=='1':
-
-		    print "In the spin formation dag if case: spin :", tmp_1.dag, tmp_1.spin, tmp_2.dag, tmp_2.spin
-    		    spin_list_upper.append(tmp_1.spin)
-		    spin_list_lower.append(tmp_2.spin)
+		    #print "In the spin formation dag if case: spin :", tmp_1.dag, tmp_1.spin, tmp_2.dag, tmp_2.spin
+    		    spin_list_upper.append(tmp_1.pos2)
+		    spin_list_lower.append(tmp_2.pos2)
 		else:
-    		   
-		    print "In the spin formation dag else case : spin :", tmp_1.dag, tmp_1.spin, tmp_2.dag, tmp_2.spin
-		    spin_list_upper.append(tmp_2.spin)
-		    spin_list_lower.append(tmp_1.spin)
-		print "spin list u check : it should have all contracted ", spin_list_upper, lim_cnt 
-		print "spin list l check : it should have all contracted ", spin_list_lower 
-		    
+		    #print "In the spin formation dag else case : spin :", tmp_1.dag, tmp_1.spin, tmp_2.dag, tmp_2.spin
+		    spin_list_upper.append(tmp_2.pos2)
+		    spin_list_lower.append(tmp_1.pos2)
+		#print "spin list u check : it should have all contracted ", spin_list_upper, lim_cnt 
+		#print "spin list l check : it should have all contracted ", spin_list_lower 
+		
+
+		print "before spin change ", full_formed, full_pos, tmp_1.spin
+		#change the spin of the contracted
+		'''
+		obj_for_spin = tmp_2.pair
+		print "spin of paired ", obj_for_spin.spin, tmp_1.spin
+		o = tmp_1.spin
+		print o,tmp_2.spin, "loooooooook"
+		tmp_2.spin = o
+		obj_for_spin.spin=o
+		print tmp_2.spin, tmp_1.spin
+		'''
+
 		if tmp_1.kind != 'ac':
 		    tmp_3 = '\delta_{'+tmp_1.name+tmp_2.name+'}'
 		    try_full_con = func.contractedobj('d', 1, 1)
 		    try_full_con.upper=[tmp_1]
-		    try_full_con.upper=[tmp_2]
+		    try_full_con.lower=[tmp_2]
 		elif tmp_1.dag=='1':
 		    tmp_3 = '\Gamma^'+tmp_1.name+'_{'+tmp_2.name+'}'
 		    try_full_con = func.contractedobj('g', 1, 1)
-		    print "initiated contracted -----------", try_full_con, try_full_con.upper, '\n'
+		    #print "initiated contracted -----------", try_full_con, try_full_con.upper, '\n'
 		    try_full_con.upper=[tmp_1]
-		    try_full_con.upper=[tmp_2]
+		    try_full_con.lower=[tmp_2]
 		elif tmp_1.dag=='0':
 		    tmp_3 = '\eta^'+tmp_2.name+'_{'+tmp_1.name+'}'
 		    try_full_con = func.contractedobj('e', 1, 1)
-		    print "initiated contracted -----------", try_full_con,'\n'
+		    #print "initiated contracted -----------", try_full_con,'\n'
 		    try_full_con.upper=[tmp_2]
-		    try_full_con.upper=[tmp_1]
+		    try_full_con.lower=[tmp_1]
 		else :
-		    print "!!!!not printing anywhere, if this occurs:there may be a problem"
+		    print "!!!!not printing anywhere, if this occurs:there may be a problem in the try contraction in fix_uv"
 		new_list.append(tmp_3)
 
-		print "---------the try full contracted object is made ----", try_full_con.kind, try_full_con.upper, '\n'
+		#print "---------the try full contracted object is made ----", try_full_con.kind, try_full_con.upper, '\n'
 		full_con_term.append(try_full_con)#full contracted product
 
-		print "to full_con_term -----------", full_con_term
+		#print "to full_con_term -----------", full_con_term
 	    
 	    #formed cumulants being appended in new_list------------------------
 	    object_cumulant = []
-	    print " before object_cumulant -------- ", object_cumulant
-	    const_of_cumulant, object_cumulant=func.cummulant(contracted, full_formed, new_list)
+	    #print " before object_cumulant -------- ", object_cumulant
+	    const_of_cumulant, object_cumulant=func.cummulant(contracted, full_formed, new_list, spin_list_upper, spin_list_lower)
 
-	    print " after object_cumulant -------- ", object_cumulant
+	    #print " after object_cumulant -------- ", object_cumulant
 	    full_con_term.extend(object_cumulant)
+
+
 
 	    if const_of_cumulant:
 		const_of_expression = const_of_expression * const_of_cumulant
 	    #const_of_expression=const_of_expression*const_from_cumulant
-	    print "const of expression and cumulant", const_of_expression, const_of_cumulant
-	# the summition thingy
-	    if func.loop_present(spin_list_upper, spin_list_lower, -1, 0) :
+            # the summition thingy
+	    loopcount=0.0
+	    print "loopcount ",spin_list_upper, spin_list_lower
+	    loopcount = func.loop_present(spin_list_upper, spin_list_lower, -1, 0)
 	    #if not output and const_of_expression!=1.0 and not cumulant_present :
-	        print "loop function executed"
-                const_of_expression=const_of_expression*2.0
+	    if loopcount>0.00001:
+                const_of_expression=const_of_expression*2.0*loopcount
 
 
 		
+
 	    #append all the normal ordered operators not contracted	
 	    for item in output:
 		full_formed.append(item.pos)
 	    #print all the normal ordered operators not contracted
-	    print full_formed, contracted, output
+	    #print full_formed, contracted, output
 	    if output:
 		func.write_normal_order(new_list, output)
 	except:
-	    print "The try statement in fix_uv did not work. Something wrong in the piece of code tin 'try'"
+	    print "--------------------------------------------------------------------The try statement in fix_uv did not work. Something wrong in the piece of code tin 'try'"
+
+	#print "before parity check ", full_formed, full_pos
 	#parity function at work to take care of sign
 	if (parity.parity(full_formed, full_pos)):
 		sign=sign*(-1)
@@ -214,11 +226,13 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	#This is where the cumulants are made through 'cumulant' function and the Latex expression is stored in new_list to be printed later
 	#cumulant_present=0
 	object_cumulant = []
-	const_of_cumulant, object_cumulant=func.cummulant(contracted, full_formed, new_list)
+        spin_upper = []#empty matrix required to pass into cumulant function
+        spin_lower = []
+	const_of_cumulant, object_cumulant=func.cummulant(contracted, full_formed, new_list, spin_upper, spin_lower)
 	if const_of_cumulant:
 	    const_of_expression= const_of_expression * const_of_cumulant
 
-	print "out of the loop for cumulant and no contraction, object_cumulant = ", object_cumulant
+	#print "out of the loop for cumulant and no contraction, object_cumulant = ", object_cumulant
 	#const_of_expression=const_of_expression*const_of_cumulant
 	#const_of_expression=const_of_expression*const_from_cumulant
 	#make the full position list - main_list
@@ -227,10 +241,10 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 
 	for item in full:
 	    main_list.append(item.pos)
-	print "out of the loop for cumulant and no contraction,  mainlist= ", main_list
+	#print "out of the loop for cumulant and no contraction,  mainlist= ", main_list
 	#make the normal ordered operators list in output
 	func.normal_order(full, output, output_pos, full_formed)
-	print "out of the normal order function and no contraction, full_formed = ", full_formed, full
+	#print "out of the normal order function and no contraction, full_formed = ", full_formed, full
 	if output and not new_list and i_c:
 	    pass
 	elif output :
@@ -248,4 +262,3 @@ def fix_con(op_no, cnt, lim_cnt, t_list, matched, contracted, contracted_l, cont
 	else :
 	    tmp_5 = '$$'+"+"+str(const_of_expression)+''.join(new_list)+'\\\\'+'$$'+'\n'
 	    f.write(tmp_5)
-

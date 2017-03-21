@@ -1,0 +1,37 @@
+#!/bin/bash
+#for point in 1.60 1.70 1.80 1.90 1.95 2.00 2.05 2.10 2.15 2.20 2.30 2.40 2.50 2.60 2.70 2.80 2.90 3.00 3.20 3.50 4.00 5.00 6.00 8.00 10.0 20.0 # 100. 
+ for point in `seq 2.00 0.10 6.00` 8.0 10.0 50.0
+#for point in `seq 2.50 -0.10 2.00` 
+
+ do
+ #mkdir -p ${point}_bohr/
+ echo $point starting ... 
+ #cd ${point}_bohr/
+
+  coord=`echo $point | bc -lq`
+  sed -e "s/value11/$coord/" ../lambda_calculation.py > aux
+  #cat aux ../vec > mcqdpt.inp
+  #gms_14 mcqdpt.inp
+  python lambda_calculation.py
+  #../../gno-span/create_uga.inp.sh
+  #../../gno-spam/uga-ssmrpt.x
+  #cat mcqdpt.dat | sed -n "/--- OPTIMIZED/,/\$END/"p | sed -n "/\$VEC/,/\$END/p" > ../vec
+
+### mkdir -p nat/
+### echo natural $point
+### cd nat/
+###  cat ../can/mcqdpt.inp | sed '/\$VEC/,$d' > aux
+###  sed -e "s/CANONC=.T./CANONC=.F./"  aux >aux1
+###  cat ../can/mcqdpt.dat | sed -n '15,88p' >nat1
+###  cat ../can/mcqdpt.dat | sed -n '164,325p'>nat2
+###  cat aux1 nat1 nat2 > nat.inp
+###  rm aux1 nat1 nat2
+###  date
+###  gms_lan nat.inp
+###  date
+### cd ../
+
+
+ #cd ../
+ done
+

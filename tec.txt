@@ -1,7 +1,0 @@
-Equation : Doing : Normal ordering of String\\Here are the operator strings : \[E^{0}_{1} ,  E^{2}_{3}\]\\
-Answer :
-$$+1.0\{E^{02}_{13}\}\\$$
-$$-0.5\Gamma^0_{3}\{E^{2}_{1}\}\\$$
-$$+0.5\eta^2_{1}\{E^{0}_{3}\}\\$$
-$$+0.5\Gamma^0_{3}\eta^2_{1}\\$$
-$$+1.0(\Lambda^{02}_{13})\\$$

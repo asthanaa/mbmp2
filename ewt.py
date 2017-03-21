@@ -32,7 +32,7 @@ func = func_ewt
 f = open("tec.txt", "w")
 
 def ewt(op1, op2):
-#class operator defined
+    #class operator defined
     '''
     string2 = []
     string1 = []
@@ -134,7 +134,6 @@ def ewt(op1, op2):
 	if item.kind == 'pa':
 	    a.append(item)
 
-    print "-------------------", full1, full2
 
     '''
     #this portion goes to the make_operator function called in the main mbpt2.py file :
@@ -212,22 +211,58 @@ def ewt(op1, op2):
         #----------------------------------------Pairing of the operators
         #---------------------------------------Storing the spin of the operators
         is_pair=1
-        spin_tracker=0
+        spin_tracker=1
+	#for item in full:
+	    #print item.pos, 'here is the spin of the operator before '
         if is_pair:
             for index in range(len(full1)/2):
-    	        full1[index].pair=full1[len(full1)-index-1].pos
-    	        full1[len(full1)-index-1].pair=full1[index].pos
-    	        full1[index].spin=spin_tracker
-    	        full1[len(full1)-index-1].spin=spin_tracker
-    	        spin_tracker=spin_tracker+1
+    	        full1[index].pair=full1[len(full1)-index-1]
+    	        full1[len(full1)-index-1].pair=full1[index]
+		#if the spin is not predefined
+		
+		if full1[index].spin==0:
+
+
+    	            full1[index].pos2=spin_tracker
+    	            full1[len(full1)-index-1].pos2=spin_tracker
+    	            full1[index].spin=spin_tracker
+    	            full1[len(full1)-index-1].spin=spin_tracker
+    	            spin_tracker=spin_tracker+1
+		
+		'''
+		if full1[index].spin==0:
+    	            full1[index].spin=spin_tracker
+    	            full1[len(full1)/2+index].spin=spin_tracker
+    	            #print full1[index].spin
+    	            #print full1[len(full1)/2+index].spin
+    	            spin_tracker=spin_tracker+1
+		'''
             for index in range(len(full2)/2):
-        	full2[index].pair=full2[len(full2)-index-1].pos
-    	    	full2[len(full2)-index-1].pair=full2[index].pos
-    	    	full2[index].spin=spin_tracker
-	        full2[len(full2)-index-1].spin=spin_tracker
-	        spin_tracker=spin_tracker+1
-	    
-            print "-------------------", full, full2
+        	full2[index].pair=full2[len(full2)-index-1]
+    	    	full2[len(full2)-index-1].pair=full2[index]
+		
+		if full2[index].spin==0:
+    	            full2[index].pos2=spin_tracker
+    	            full2[len(full2)-index-1].pos2=spin_tracker
+    	    	    full2[index].spin=spin_tracker
+	            full2[len(full2)-index-1].spin=spin_tracker
+	            spin_tracker=spin_tracker+1
+		'''
+		if full2[index].spin==0:
+
+    	            full2[index].spin=spin_tracker
+    	            full2[len(full2)/2+index].spin=spin_tracker
+
+    	            #print full2[index].spin
+    	            #print full2[len(full2)/2+index].spin
+    	            spin_tracker=spin_tracker+1
+		'''
+	#print len(full), len(full1)/2
+
+	#for item in full1:
+	    #print item.pos, 'here is the spin of the operator'
+	#for item in full2:
+	    #print item.pos, 'here is the spin of the operator'
         #-------------------------all the possible contracting operators of each operator is being sored in poss here
         #poss is a matrix 
         if menu=='1':#self normal ordering
@@ -262,10 +297,8 @@ def ewt(op1, op2):
 	    
                 elif operator.kind == 'ac':  #because active states will have eta and gamma
 	            for item in u:
-			print operator.pos, item.pos, int(operator.dag), int(item.dag), operator.string, item.string
 	                if operator.pos<item.pos and int(item.dag)!=int(operator.dag) and operator.string!=item.string:
     		            y.append(item)
-			    print "------------------attention incuded here is poss---"
         #if (y): remember that empty strings are also included
     
                 poss.append(y) #list of list in dictionary order i.e 1st annhilation -> possible creation then 2nd ...   
@@ -314,7 +347,6 @@ def ewt(op1, op2):
     	        tmp_lower=[]
                 tmp_l.append('}')
             tmp_l.append('\]')
-	    print "whats the problem here : ", tmp_l
             tmp_6 = "Equation : "+''.join(tmp_l)+'\\\\'+'\n'+"Answer :\n"
             f.write(tmp_6)
         if not i_c and commutator:
@@ -324,8 +356,8 @@ def ewt(op1, op2):
 
 	full_con = []
 	const_con = []
-	print len(full), contracted, a, i, u, full, poss, f, store_for_repeat, full_pos, i_c, menu, full_con, const_con
         make_c.make_c(len(full), contracted, a, i, u, full, poss, f, store_for_repeat, full_pos, i_c, menu, full_con, const_con)
+
 
     return full_con, const_con
     #remember to return the fullt contracted value
